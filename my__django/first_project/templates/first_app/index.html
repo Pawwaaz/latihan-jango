@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Access Record</h2>
+    <div class="djangotwo">
+      {% if access_record %}
+      <table>
+        <thead>
+          <th>Site</th>
+          <th>Date</th>
+        </thead>
+        {% for acc in access_record %}
+        <tr>
+          <td>{{acc.name}}</td>
+          <td>{{acc.date}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <p>No Access</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
